@@ -52,8 +52,8 @@ def exectue_program_step(step, program):
 
 
 if __name__ == "__main__":
-    for noun in xrange(0,100):
-        for verb in xrange(0,100):
+    for noun in range(0,100):
+        for verb in range(0,100):
             program = read_program("input.txt")
             program[1] = noun
             program[2] = verb
