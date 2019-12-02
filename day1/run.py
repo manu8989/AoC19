@@ -24,4 +24,10 @@ def test_calc_fuel_example4():
     assert calc_fuel(100756) == 33583
 
 if __name__ == "__main__":
-    print("Day 1")
+    filepath = 'input.txt'
+    sum = 0
+    with open(filepath) as file:
+        lines = file.readlines()
+        for line in lines:
+            sum += calc_fuel(int(line.strip()))
+    print(sum)
