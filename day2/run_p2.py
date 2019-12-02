@@ -37,24 +37,27 @@ def execute_program(program):
 
 def exectue_program_step(step, program):
     
+    input1_index = program[step+1]
+    input2_index = program[step+2]
+    output_index = program[step+3]
+
     if program[step] == 1:
-        res = program[program[step+1]] + program[program[step+2]]
-        program[program[step+3]] = res
+        program[output_index] = program[input1_index] + program[input2_index]
     elif program[step] == 2:
-        res = program[program[step+1]] * program[program[step+2]]
-        program[program[step+3]] = res
+        program[output_index] = program[input1_index] * program[input2_index]
     else:
         print("invalid input " + str(program[step]))
+    
     return program
 
 
 if __name__ == "__main__":
-    
-    program = read_program("input.txt")
-
-    program[1] = 12
-    program[2] = 2
-
-    program = execute_program(program)
-
-    print(program)
+    for noun in xrange(0,100):
+        for verb in xrange(0,100):
+            program = read_program("input.txt")
+            program[1] = noun
+            program[2] = verb
+            program = execute_program(program)
+            if program[0] == 19690720:
+                print(100*noun + verb)
+                exit()
