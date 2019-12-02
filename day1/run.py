@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 
+
 import os
 import sys
 import math
-
-import numpy as np
-import matplotlib.pyplot as plt
 
 
 def calc_fuel(mass):
@@ -22,6 +20,7 @@ def test_calc_fuel_example3():
 
 def test_calc_fuel_example4():
     assert calc_fuel(100756) == 33583
+
 
 if __name__ == "__main__":
     filepath = 'input.txt'
