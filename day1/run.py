@@ -6,9 +6,6 @@ import sys
 import math
 
 
-def calc_fuel(mass):
-    return max(int(mass / 3) - 2, 0)
-
 def test_calc_fuel_example1():
     assert calc_fuel(12) == 2
 
@@ -20,6 +17,10 @@ def test_calc_fuel_example3():
 
 def test_calc_fuel_example4():
     assert calc_fuel(100756) == 33583
+
+
+def calc_fuel(mass):
+    return max(int(mass / 3) - 2, 0)
 
 
 if __name__ == "__main__":
